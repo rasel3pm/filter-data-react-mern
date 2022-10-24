@@ -1,29 +1,51 @@
-import { useState } from 'react';
-import './App.css';
-import TableCom from './components/TableCom';
-import { User } from "./data/Data"
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from './components/Footer';
+import { useState } from "react";
+import "./App.css";
+import TableCom from "./components/TableCom";
+import { User } from "./data/Data";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from "./components/Footer";
+import { Form } from "react-bootstrap";
 function App() {
-  const [input, setInput] = useState("")
+  const [input, setInput] = useState("");
 
   const search = (data) => {
-    return data.filter((profile) => profile.name.toLowerCase().includes(input) || profile.username.toLowerCase().includes(input) || profile.company.name.toLowerCase().includes(input))
-  }
+    return data.filter(
+      (profile) =>
+        profile.name.toLowerCase().includes(input) ||
+        profile.username.toLowerCase().includes(input) ||
+        profile.company.name.toLowerCase().includes(input)
+    );
+  };
 
   return (
-    <div className="App">
-      <h1>Filtaring Data</h1><hr />
-      <input type="text" placeholder='Search...' name='search' className='px-3 my-2' onChange={(e) => setInput(e.target.value)} />
-      {/* <input type="checkbox" id="html" name="html" value="html" onChange={(e) => setInput(e.target.value)} />
-      <label for="html">HTML</label>
-      <input type="checkbox" id="css" name="css" value="css" onChange={(e) => setInput(e.target.value)} />
-      <label for="css">css</label> */}
+    <main className="App">
+      <h4>Filtaring Data</h4>
+      <hr />
 
+      <form>
+        <div className="search_area">
+          <div className="search_input">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="shadow"
+              name="search"
+              onChange={(e) => setInput(e.target.value)}
+            />
+          </div>
+          <div className="Check_box">
+            <Form.Check
+              type="switch"
+              id="custom-switch"
+              name="switch"
+              label="Check"
+            />
+          </div>
+        </div>
+      </form>
       <TableCom data={search(User)} />
-      <Footer/>
-
-    </div>
+      <Footer />
+    </main>
   );
 }
 

@@ -1,38 +1,83 @@
 .App {
-  text-align: center;
+  padding: 0 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input[type="text"]{
+  margin: 15px 0;
+  width: 100%;
+  padding: 6px;
+  border: 1px solid rgb(117, 110, 110);
+  border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search_area{
   display: flex;
-  flex-direction: column;
+
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.search_input{
+  width: 30%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.footer span{
+  color: rgb(116, 8, 131);
+  font-size: small;
+}
+
+
+/* Responsive */
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+  .App {
+    padding: 0 10px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .search_input{
+    width: 60%;
   }
+  
+  .footer{
+    text-align: center;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+  
+  
+  .search_input{
+    width: 50%;
+  }
+  
+  .footer{
+    text-align: center;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+  
+  .search_input{
+    width: 40%;
+  }
+  
+  .footer{
+    text-align: center;
+  }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+/*x-large devices (dekstops,1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    
+}
+
+/*Extra extra  large devices (larges desktops, 1200px and up)*/
+@media (min-width: 1400px) {
+
 }
